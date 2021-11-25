@@ -13,5 +13,5 @@ How to use this image, check here: https://c64lib.github.io/gradle-retro-assembl
 
 ### 0.1.4
 
-* Support for Java 11.
-* Support for Vice 3.x.
+* Support for Java `11`.
+* Support for Vice `3.x`.
