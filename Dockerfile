@@ -7,5 +7,5 @@ WORKDIR /c64libci
 COPY rom/C64/* /usr/lib/vice/C64/
 COPY rom/DRIVES/* /usr/lib/vice/DRIVES/
 RUN git clone https://bitbucket.org/magli143/exomizer.git && cd exomizer && git checkout 3.1.1
-RUN cd exomizer/src && make build && cd ../..
-COPY exomizer/src/exomizer /usr/bin/
+RUN cd exomizer/src && make build
+RUN cp exomizer/src/exomizer /usr/bin/
