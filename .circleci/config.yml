@@ -1,6 +1,5 @@
 image_config: &image_config
   IMAGE_NAME: c64libci
-  IMAGE_TAG: ${CIRCLE_TAG}
   LINUX_VERSION: DEBIAN_BUSTER
 
 version: 2
@@ -14,10 +13,10 @@ jobs:
     steps:
       - checkout
 
-      - run: echo "Building ${IMAGE_NAME} ${IMAGE_TAG}..."
+      - run: echo "Building ${IMAGE_NAME} ${CIRCLE_TAG}..."
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-      - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
-      # - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG && sleep 10
+      - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:${CIRCLE_TAG} .
+      # - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:${CIRCLE_TAG} && sleep 10
 
 
 workflows:
