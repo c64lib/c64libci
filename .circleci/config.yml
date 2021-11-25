@@ -1,6 +1,6 @@
 image_config: &image_config
   IMAGE_NAME: c64libci
-  IMAGE_TAG: CIRCLE_TAG
+  IMAGE_TAG: ${CIRCLE_TAG}
   LINUX_VERSION: DEBIAN_BUSTER
 
 version: 2
