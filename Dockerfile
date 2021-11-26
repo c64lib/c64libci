@@ -15,5 +15,5 @@ RUN cp exomizer/src/exomizer /usr/bin/
 # GoatTracker
 RUN mkdir goattracker && wget --quiet -P goattracker https://sourceforge.net/projects/goattracker2/files/GoatTracker%202/2.74/GoatTracker_2.74.zip/download
 RUN cd goattracker && unzip download
-RUN cd goatracker/src && make ../linux/gt2reloc
-RUN cd goatracker/linux && ls -al && cp gt2reloc /usr/bin
+RUN cd goattracker/src && make ../linux/gt2reloc
+RUN cd goattracker/linux && ls -al && cp gt2reloc /usr/bin
