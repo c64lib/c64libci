@@ -12,9 +12,9 @@ jobs:
 
     steps:
       - checkout
-      - run: echo "Building ${IMAGE_NAME} ${CIRCLE_TAG}..."
+      - run: echo "Building ${IMAGE_NAME} 0.0.0 ..."
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-      - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:${CIRCLE_TAG} .
+      - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:0.0.0 .
 
   push:
     machine: true
