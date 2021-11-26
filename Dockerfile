@@ -18,5 +18,6 @@ RUN wget https://sourceforge.net/projects/goattracker2/files/GoatTracker%202/2.7
 RUN ls -al
 RUN unzip download
 RUN ls -al
+RUN cd src/bme && make && ls -al
 RUN cd src && make ../linux/gt2reloc
 RUN cd linux && ls -al
