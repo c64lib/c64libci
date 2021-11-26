@@ -4,7 +4,7 @@ RUN cat /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk
 RUN apt-get install -y vice=3.3.0.dfsg-2
-RUN apt-get install -y libsdl2-2.0-0
+RUN apt-get install -y sdl2
 RUN apt-get install -y libsdl2-dev
 RUN sdl-config --cflags
 RUN sdl-config --libs
