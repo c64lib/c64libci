@@ -22,4 +22,4 @@ RUN unzip download
 RUN ls -al
 RUN cd src/bme && make && ls -al
 RUN cd src && make ../linux/gt2reloc
-RUN cd linux && ls -al
+RUN cd linux && ls -al && cp gt2reloc /usr/bin
