@@ -4,6 +4,7 @@ RUN cat /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk
 RUN apt-get install -y vice=3.3.0.dfsg-2
+RUN apt-get install -y libsdl2-dev
 # RUN apt source -y goattracker=2.74+dfsg1-1
 WORKDIR /c64libci
 COPY rom/C64/* /usr/lib/vice/C64/
