@@ -15,5 +15,5 @@ RUN cp exomizer/src/exomizer /usr/bin/
 # GoatTracker
 RUN wget https://sourceforge.net/projects/goattracker2/files/GoatTracker%202/2.74/GoatTracker_2.74.zip/download
 RUN ls -al
-RUN unzip GoatTracker_2.74.zip
+RUN unzip download
 RUN ls -al
