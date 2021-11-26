@@ -12,8 +12,18 @@ jobs:
 
     steps:
       - checkout
-
       - run: echo "Building ${IMAGE_NAME} ${CIRCLE_TAG}..."
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:${CIRCLE_TAG} .
+
+  push:
+    machine: true
+    environment:
+      <<: *image_config
+
+    steps:
+      - checkout
+      - run: echo "Publishing ${IMAGE_NAME} ${CIRCLE_TAG}..."
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:${CIRCLE_TAG} .
       - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:${CIRCLE_TAG}
@@ -21,9 +31,13 @@ jobs:
 
 workflows:
   version: 2
+  build:
+    jobs:
+      - build
+
   publish:
     jobs:
-      - build:
+      - push:
           filters:
             branches:
               ignore:
