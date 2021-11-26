@@ -1,5 +1,6 @@
 FROM buildpack-deps:buster
 RUN echo "deb http://ftp.debian.org/debian buster contrib" >> /etc/apt/sources.list
+RUN cat /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk
 RUN apt-get install -y vice=3.3.0.dfsg-2
