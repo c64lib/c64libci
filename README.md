@@ -1,4 +1,8 @@
 # c64libci
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CircleCI](https://circleci.com/gh/c64lib/c64libci/tree/main.svg?style=shield)](https://circleci.com/gh/c64lib/c64libci/tree/main)
+[![CircleCI](https://circleci.com/gh/c64lib/c64libci/tree/develop.svg?style=shield)](https://circleci.com/gh/c64lib/c64libci/tree/develop)
+
 Docker image project for running retro assembler tool on CI such as CircleCI.
 
 How to use this image, check here: https://c64lib.github.io/gradle-retro-assembler-plugin/#_circleci
