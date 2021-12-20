@@ -5,6 +5,8 @@
 
 Docker image project for running retro assembler tool on CI such as CircleCI.
 
+Docker image is published on docker hub: https://hub.docker.com/repository/docker/maciejmalecki/c64libci
+
 How to use this image, check here: https://c64lib.github.io/gradle-retro-assembler-plugin/#_circleci
 
 ## Used software
