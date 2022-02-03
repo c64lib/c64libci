@@ -18,6 +18,10 @@ This docker image makes use of the following 3rd party software:
 
 ## Change log
 
+### 0.1.6
+
+* Support for `zip` executable (shell command).
+
 ### 0.1.5
 
 * Support for Vice `3.3`.
