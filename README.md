@@ -5,6 +5,10 @@ How to use this image, check here: https://c64lib.github.io/gradle-retro-assembl
 
 ## Change log
 
+### 0.1.6
+
+* Support for `zip` executable (shell command).
+
 ### 0.1.5
 
 * Support for Vice `3.3`.
