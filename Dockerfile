@@ -1,14 +1,18 @@
-FROM buildpack-deps:buster
-RUN echo "deb http://ftp.debian.org/debian buster contrib" >> /etc/apt/sources.list
+FROM buildpack-deps:bullseye
+RUN echo "deb http://ftp.debian.org/debian bullseye contrib" >> /etc/apt/sources.list
 RUN cat /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk
-RUN apt-get install -y vice=3.3.0.dfsg-2
 RUN apt-get install -y libsdl1.2-dev
 RUN apt-get install -y zip
+RUN apt-get install -y flex byacc dos2unix xa65 libsdl-image1.2-dev
 WORKDIR /c64libci
-COPY rom/C64/* /usr/lib/vice/C64/
-COPY rom/DRIVES/* /usr/lib/vice/DRIVES/
+# Vice
+RUN mkdir vice && wget --quiet -P vice https://sourceforge.net/projects/vice-emu/files/releases/vice-3.7.1.tar.gz/download && mv vice/download vice/vice-3.7.1.tar.gz
+RUN cd vice && tar xzf vice-3.7.1.tar.gz
+RUN cd vice/vice-3.7.1 && ./configure --disable-pdf-docs
+RUN cd vice/vice-3.7.1 && make
+RUN cd vice/vice-3.7.1 && make install
 # Exomizer
 RUN git clone https://bitbucket.org/magli143/exomizer.git && cd exomizer && git checkout 3.1.1
 RUN cd exomizer/src && make build
