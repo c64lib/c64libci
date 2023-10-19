@@ -18,6 +18,9 @@ This docker image makes use of the following 3rd party software:
 
 ## Change log
 
+### 0.1.8
+* Support for dasm `2.2.14.1`.
+
 ### 0.1.7
 * Update to Debian Bullseye.
 * Support for Vice `3.7`.
