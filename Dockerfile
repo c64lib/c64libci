@@ -24,4 +24,4 @@ RUN cd goattracker/src && make ../linux/gt2reloc
 RUN cd goattracker/linux && ls -al && cp gt2reloc /usr/bin
 # DASM
 RUN mkdir dasm && wget --quiet -P dasm https://github.com/dasm-assembler/dasm/releases/download/2.20.14.1/dasm-2.20.14.1-linux-x64.tar.gz
-RUN cd dasm && unzip dasm-2.20.14.1-linux-x64.tar.gz && cp dasm /usr/bin && chmod a+x /usr/bin/dasm
+RUN cd dasm && tar xzf dasm-2.20.14.1-linux-x64.tar.gz && cp dasm /usr/bin && chmod a+x /usr/bin/dasm
